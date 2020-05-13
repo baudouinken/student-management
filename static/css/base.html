@@ -1,0 +1,35 @@
+{% load bootstrap4 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page_title }}</title>
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+
+</head>
+<body>
+
+    <p>
+        <a href="{% url 'home_page' %}" class="btn btn-primary">Home</a>
+        <a href="{% url 'veranstaltung_list' %}" class="btn btn-primary">Alle Lehrveranstaltugen</a>
+        <a href="{% url 'student_list' %}" class="btn btn-primary">Alle Studierenden</a>
+        <a href="{% url 'lehrenden_list' %}" class="btn btn-primary">Alle Lerenden</a>
+    </p>
+
+    {% bootstrap_messages %}
+
+    <h2> {{ page_title }} </h2>
+
+    {% block content %}
+        <p>Home Template</p>
+    {% endblock %}
+
+    {% block footer %}
+        <p>Block für Footer</p>
+    {% endblock %}
+
+</body>
+</html>
